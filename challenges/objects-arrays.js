@@ -120,7 +120,7 @@ const graduates = [
 
 /* Request 1: Create a new array called universities that contains all the univeristies in the graduates array.  
 Once you have the new array created, sort the universities alphabetically and log the result. */
-let universities = [];
+const universities = [];
 
 for (let i = 0; i < graduates.length; i++) {
   universities.push(graduates[i].university);
@@ -142,18 +142,14 @@ console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
 
-let allUnis = [];
-for (let i = 0; i < graduates.length; i++) {
-  allUnis.push(graduates[i].university);
-}
-allUnis.sort();
-console.log(allUnis.join("\n"));
-
 const uni = [];
 
-for (let i = 0; i < allUnis.length; i++) {
-  if ((allUnis[i] = `Uni`)) {
-    uni.push(allUnis);
+for (let i = 0; i < graduates.length; i++) {
+  let myString = graduates[i].university;
+  let myStringTwo = myString.match(/Uni/);
+  // console.log(myStringTwo);
+  if (myStringTwo) {
+    uni.push(graduates[i].university);
   }
 }
 
